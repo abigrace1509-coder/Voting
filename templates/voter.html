@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Voter Portal - Identity-First Voting</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body class="bg-light">
+<div class="container py-4">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h2>Voter Portal</h2>
+    <button class="btn btn-outline-danger" id="voterLogout">Logout</button>
+  </div>
+
+  <div class="card mb-3"><div class="card-body">
+    <h5>1) Login with Student ID</h5>
+    <div class="row g-2">
+      <div class="col-md-8"><input class="form-control" id="studentId" placeholder="Student ID (e.g., STU001)"></div>
+      <div class="col-md-4"><button class="btn btn-primary w-100" id="voterLogin">Login</button></div>
+    </div>
+  </div></div>
+
+  <div class="card mb-3"><div class="card-body">
+    <h5>2) Verify Biometric (Upload same face/fingerprint image used at registration)</h5>
+    <input type="file" class="form-control mb-2" id="biometricFile" accept="image/*">
+    <button class="btn btn-success" id="verifyBiometric">Verify</button>
+    <small class="text-muted d-block mt-2">Voting is only allowed after successful biometric verification.</small>
+  </div></div>
+
+  <div class="card mb-3"><div class="card-body">
+    <h5>3) Active Elections</h5>
+    <button class="btn btn-dark mb-2" id="loadElections">Load Active Elections</button>
+    <select class="form-select mb-2" id="electionSelect"></select>
+    <button class="btn btn-secondary" id="loadCandidates">Load Candidates</button>
+    <div id="candidatesContainer" class="row g-3 mt-1"></div>
+  </div></div>
+
+  <div class="alert mt-3 d-none" id="voterAlert"></div>
+</div>
+<script src="/static/js/voter.js"></script>
+</body>
+</html>
